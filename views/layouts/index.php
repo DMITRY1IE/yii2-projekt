@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use app\assets\AppAsset;
+use yii\widgets\Breadcrumbs;
+use app\widgets\Alert;
 
 AppAsset::register($this);
 
@@ -38,7 +40,7 @@ $this->beginPage() ?>
                 </ul>
             </nav>
             <!-- button -->
-            <div class="main-screen__button h" onclick="q()">Зайти в кабинет</div>
+            <div class="main-screen__button h"><a href="#">Личный каб</a></a></div>
             <!-- h1 -->
             <div class="first">
                 <h1><br>Первый курс</br><span> по компьютерной сборке</span></h1>
@@ -86,6 +88,13 @@ $this->beginPage() ?>
                 </div>
             </div>
         </div>
+        <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </div>
     </header>
     <!-- main -->
     <main class="body">

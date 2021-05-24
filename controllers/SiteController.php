@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Firsttable;
 
 class SiteController extends Controller
 {
@@ -125,4 +126,15 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    // подключение таблицы
+    public function actionFirsttable() {
+        // сортировка таблицы
+    $firsttable = Firsttable::find()->orderBy('name')->all();
+    $firsttable = Firsttable::find()->orderBy('date')->all();
+    return $this->render('firsttable',[
+    'firsttable' => $firsttable
+    ]);
 }
+}
+
