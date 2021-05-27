@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Firsttable;
+use yii\data\ActiveDataProvider;
 
 class SiteController extends Controller
 {
@@ -130,11 +131,20 @@ class SiteController extends Controller
     // подключение таблицы
     public function actionFirsttable() {
         // сортировка таблицы
-    $firsttable = Firsttable::find()->orderBy('name')->all();
-    $firsttable = Firsttable::find()->orderBy('date')->all();
+    $firsttable = Firsttable::find()->all();
     return $this->render('firsttable',[
     'firsttable' => $firsttable
     ]);
+
+}
+public function actionFirsttable2(){
+    $dataProvider = new ActiveDataProvider([
+        'query'=> Firsttable::find(),
+        'pagination'=>[
+            'pageSize'=>20,
+        ],
+    ]);
+    return $this->render('firsttable2',['dataProvider' => $dataProvider]);
 }
 }
 
