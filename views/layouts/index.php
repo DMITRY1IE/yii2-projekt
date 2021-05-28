@@ -40,7 +40,7 @@ $this->beginPage() ?>
                 </ul>
             </nav>
             <!-- button -->
-            <div class="main-screen__button h"><a href="#">Личный каб</a></a></div>
+            <div class="main-screen__button h"><a href="http://localhost/basic/web/base.php?r=site%2Ffirsttable2&sort=Text#">переход к таблице</a></a></div>
             <!-- h1 -->
             <div class="first">
                 <h1><br>Первый курс</br><span> по компьютерной сборке</span></h1>
