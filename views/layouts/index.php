@@ -40,7 +40,7 @@ $this->beginPage() ?>
                 </ul>
             </nav>
             <!-- button -->
-            <div class="main-screen__button h"><a href="http://localhost/basic/web/base.php?r=site%2Ffirsttable2&sort=Text#">переход к таблице</a></a></div>
+            <div class="main-screen__button h"><a href="http://localhost/basic/web/base.php?r=site%2Ffirsttable2&sort=Text#">Переход к таблице</a></a></div>
             <!-- h1 -->
             <div class="first">
                 <h1><br>Первый курс</br><span> по компьютерной сборке</span></h1>
@@ -67,7 +67,7 @@ $this->beginPage() ?>
             <!-- last-line -->
             <div class="main-screen-last-line-bgs">
                 <div class="sub">
-                    <div class="main-screen__button--active h" onclick="q()">Заказать курс</div>
+                    <div class="main-screen__button--active h" onclick="q()"><p class="txt-fix">Заказать курс</p></div>
 
                     <div class="main-screen__people">
                         <p class="op">Учеников всего:</p>
@@ -88,13 +88,6 @@ $this->beginPage() ?>
                 </div>
             </div>
         </div>
-        <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
     </header>
     <!-- main -->
     <main class="body">
